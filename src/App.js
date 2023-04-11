@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react'
+import Locate from './components/Locate';
+import Flight from './components/Flight';
+import Confirm from './components/Confirm';
+import Order from './components/Order';
 
-function App() {
+export default function App() {
+  const [origin, setOrigin] = useState();
+  const [destination, setDestination] = useState();
+  const [flight, setFlight] = useState();
+  const [confirmation, setConfirmation] = useState();
+  const [order, setOrder] = useState();
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Locate handleChoice={setDestination} display={"Origin"}/>
+      <Locate handleChoice={setOrigin} display={"Destination"}/>
+      { origin &&
+        destination &&
+        <Flight origin={origin} destination={destination} setFlight={setFlight}/>
+      }
+      { flight &&
+        <Confirm flight={flight} setConfirmation={setConfirmation} />
+      }
+      { confirmation &&
+        <Order confirmation={confirmation} order={order} setOrder={setOrder} />
+      }
     </div>
-  );
+  )
 }
-
-export default App;
