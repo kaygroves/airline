@@ -1,0 +1,81 @@
+.form-group {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+label {
+    width: 90px;
+    text-align: right;
+    margin-right: 10px;
+}
+
+.sublabel {
+    color: #B2DFDB;
+    margin: 2px;
+    font-size: 12px;
+}
+
+input[type="text"],
+input[type="date"] {
+    padding: 10px;
+    font-size: 12px;
+}
+
+button[type="submit"] {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #185759;
+    color: #fff;
+    border: 2px double #cccccc;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.button-8:hover,
+.button-8:focus {
+  background-color: #b3d3ea;
+  color: #2c5777;
+}
+
+.button-8:focus {
+  box-shadow: 0 0 0 4px rgba(0, 149, 255, .15);
+}
+
+.button-8:active {
+  background-color: #a0c7e4;
+  box-shadow: none;
+  color: #2c5777;
+}
+
+
+input[type="date"] {
+    position: relative;
+}
+
+input[type="date"]:before {
+    content: attr(placeholder);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #fff;
+    color: #B2CFDB;
+    pointer-events: none;
+    line-height: 1.5;
+    padding: 10px;
+}
+
+input[type="date"]:focus:before,
+input[type="date"]:not([value=""]):before {
+display: none;
+}
+
+.custom-bg {
+    background-color: #C8E3DF;
+}
+
+
