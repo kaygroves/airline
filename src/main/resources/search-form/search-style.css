@@ -1,0 +1,84 @@
+.form-group {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+label {
+    width: 120px;
+    text-align: left;
+    margin-right: 10px;
+    margin-left: 5px;
+    margin-bottom: 1px;
+}
+
+.sublabel {
+    color: #B2DFDB;
+    margin-top: 0px;
+    font-size: 9px;
+}
+
+input[type="text"],
+input[type="date"] {
+    padding: 8px;
+    font-size: 12px;
+}
+
+button[type="submit"] {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #185759;
+    color: #fff;
+    border: 2px double #cccccc;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.button-8:hover,
+.button-8:focus {
+  background-color: #b3d3ea;
+  color: #2c5777;
+}
+
+.button-8:focus {
+  box-shadow: 0 0 0 4px rgba(0, 149, 255, .15);
+}
+
+.button-8:active {
+  background-color: #a0c7e4;
+  box-shadow: none;
+  color: #2c5777;
+}
+
+
+input[type="date"] {
+    position: relative;
+}
+
+input[type="date"]:before {
+    content: attr(placeholder);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #fff;
+    color: #B2CFDB;
+    pointer-events: none;
+    line-height: 1.5;
+    padding: 10px 0.5rem 0 0.5rem;
+}
+
+input[type="date"]:focus:before,
+input[type="date"]:not([value=""]):before 
+{
+display: none;
+}
+
+.custom-bg {
+    background-color: #C8E3DF;
+}
+
+
