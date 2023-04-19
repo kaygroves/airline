@@ -1,9 +1,12 @@
+/*
+Creates an Order to be posted to the server, displays flight booking details and confirmation to the user
+*/
 import React, { useState } from "react";
 
 function Order(props) {
     const [traveler, setTraveler] = useState("");
-    const [fname, setFname] = useState("Harryette");
-    const [lname, setLname] = useState("Mullen");
+    const [fname, setFname] = useState("John");
+    const [lname, setLname] = useState("Doe");
     const [dob, setDob] = useState("1990-01-01");
 
     function makeTraveler(event){
@@ -73,7 +76,7 @@ function Order(props) {
             { props.order &&
                 <div>
                     <div>Flight Booked! Here are the details:</div>
-                    <div>{JSON.stringify(props.order)}</div>
+                    <div>Name : {fname} {lname}, DOB: {dob}, other flight details to come ... </div>
                 </div>
             }
         </div>

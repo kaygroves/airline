@@ -1,3 +1,4 @@
+//This class simplifies text input for the project (basically just creates an input form template)
 import React from "react";
 
 const TextInput = props => (

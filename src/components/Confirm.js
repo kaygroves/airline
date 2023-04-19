@@ -1,3 +1,7 @@
+/*
+Sends a post reuqest to server in order to confirm the availability and pricing of flight that was selected,
+if successful App component will create an Order
+*/
 import React, { useState } from "react";
 
 function Confirm(props) {

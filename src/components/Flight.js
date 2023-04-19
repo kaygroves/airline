@@ -1,15 +1,20 @@
+//This component takes the location information entered from the locate component,
+//collects more flight details from the user and makes a request with info to server to retreive a list of
+//matching flights 
 import React, { useState } from "react";
 import FlightSelect from "./FlightSelect";
 
 function Flight(props) {
     const [passengers, setPassengers] = useState("1");
-    const [departDate, setDepartDate] = useState('');
-    const [returnDate, setReturnDate] = useState('');
+    const [departDate, setDepartDate] = useState();
+    const [returnDate, setReturnDate] = useState();
     const [flightOptions, setFlightOptions] = useState([]);
 
     function submit(event, props){
         event.preventDefault();
         var returnDateParam = (returnDate ? "&returnDate=" + returnDate : "");
+        console.log(returnDate);
+        /*
         fetch(
             "/api/flights/?origin=" + props.origin  +
             "&destination=" + props.destination +
@@ -18,8 +23,12 @@ function Flight(props) {
             returnDateParam,
             {credentials: "include"}
         )
+        */
+       //http://localhost:3000/api/flights?origin=LON&destination=NYC&departDate=2023-11-15&returnDate=2023-11-17&adults=3
+       window.fetch(`/api/flights?origin=${props.origin}&destination=${props.destination}&departDate=2023-06-15&returnDate=2023-06-17&adults=1`, {credentials: "include"})
         .then((response) => response.json())
         .then((json) => {
+           // console.log("test   " + json)
           setFlightOptions(json);
         });
     }

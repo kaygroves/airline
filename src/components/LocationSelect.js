@@ -1,3 +1,6 @@
+/* This component takes the location data from the Locate Component and returns a list of airports to select the
+flights from
+*/
 import React from "react";
 
 function LocationSelect(props) {

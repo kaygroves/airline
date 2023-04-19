@@ -1,3 +1,8 @@
+/* This component takes the origin and destination data given by the user and makes a get request to the api 
+endpoint to search for locations matching the input
+creates a locationselect component to process the data
+*/
+
 import React, { useEffect, useState } from "react";
 
 import TextInput from './TextInput';
@@ -38,9 +43,9 @@ function Locate(props) {
         window.fetch("/api/locations?keyword=" + value, {credentials: "include"})
         .then((response) => response.json())
         .then((data) => {
-        console.log("data");
+
           setLocations(data);
-          console.log("made it here");
+
 
         });
 

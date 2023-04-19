@@ -1,13 +1,21 @@
+  /*This component takes the data from the Flight component and displays list of flights available for user to
+  choose from, selected flight sent back to App component to be further processed
+  */
 import React from "react";
 
 function FlightSelect(props) {
-  let data = Array.from(props.flightOptions)
-    //const options = props.flightOptions.map((flight, index) =>
-    console.log("flight options: " + data);
-    const options = data.map((flight, index) =>
-    
+  ///let data = Array.from(props.flightOptions)
+  console.log( props.flightOptions[0]);
+  props.flightOptions.forEach((item)=>{
+    item.price.currency="USD";
+  })
+  //props.flightOptions[0].price.currency="USD";
+    const options = props.flightOptions.map((flight, index) =>
+   
+    ///const options = data.map((flight, index) =>
+    //flight.price.currency="USD";
       <>
-      console.log("in the flight selection");
+      
         <input type="radio" id={flight.id} name="select" value={index} />
         <label htmlFor={flight.id}>
             {"Price: " + flight.price.grandTotal + " " + flight.price.currency}
@@ -16,7 +24,7 @@ function FlightSelect(props) {
             Available Seats: {flight.numberOfBookableSeats}
         </div>
         <div>
-            One Way?: {flight.oneWay ? "True" : "False"}
+            One Way? : {flight.oneWay ? "True" : "False"}
         </div><br></br>
       </>
     );
@@ -28,8 +36,11 @@ function FlightSelect(props) {
             {options}
           </form>
         }
-      </div>
+        
+      </div >
+      
     );
+  
 }
 
 export default FlightSelect;
